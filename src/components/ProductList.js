@@ -34,7 +34,7 @@ export default class ProductList extends Component {
     return (
       <div className="product-list">
         <div className="product-list-filter">
-          <label>Product Type </label> 
+          <label className="label-filter">Filter by Product Type </label> 
           <select onChange={ this.handleProductTypeChange }>
             <option>Eyebrow</option>
             <option>Eyeliner</option>

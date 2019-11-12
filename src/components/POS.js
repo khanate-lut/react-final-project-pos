@@ -19,7 +19,18 @@ export default class POS extends Component {
   handleProductItemClick = item => {
     console.log("POS handleProductItemClick", item);
     const newBasket = [...this.state.basketProductList];
-    newBasket.push(item);
+    let checkDup = false;
+    newBasket.forEach(product => {
+      if (product.id === item.id) {
+        product.qty++;
+        product.price = parseFloat(product.price * product.qty);
+        checkDup = true;
+      }
+    });
+    if (!checkDup) {
+      item.qty = 1;
+      newBasket.push(item);
+    }
     this.setState({
       basketProductList: newBasket
     });

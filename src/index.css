@@ -26,6 +26,10 @@ code {
   padding: 10px;
 }
 
+.label-filter {
+  padding-right: 5px;
+}
+
 .product-list-loading {
   height: 100vh;
   margin: 0 auto;
