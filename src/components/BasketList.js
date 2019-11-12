@@ -24,7 +24,7 @@ export default class BasketList extends Component {
             })
           ) : (
             <li className="list-group-item d-flex justify-content-between align-items-center">
-              No data
+              No in basket.
             </li>
           )}
         </ul>
