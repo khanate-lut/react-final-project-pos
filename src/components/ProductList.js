@@ -95,20 +95,22 @@ export default class ProductList extends Component {
             <span className="close" onClick={this.handleCloseModal}>
               &times;
             </span>
-            <p>
-              <label>Product name: {this.state.productSelected.name} </label>
+            <h3>Product description</h3>
+            <p className="text-left">
+              <label><b>Name</b>: {this.state.productSelected.name} </label>
             </p>
-            <p>
-              <label>Product brand: {this.state.productSelected.brand} </label>
+            <p className="text-left">
+              <label><b>Brand</b>: {this.state.productSelected.brand} </label>
             </p>
-            <p>
+            <p className="text-left">
               <label>
-                Product description: {this.state.productSelected.description}{" "}
+                <b>Description</b>: {this.state.productSelected.description}{" "}
               </label>
             </p>
-            <p>
-              <label>Product price: {this.state.productSelected.price} </label>
+            <p className="text-left">
+              <label><b>Price</b>: {this.state.productSelected.price} </label>
             </p>
+            <hr width="200" />
             <p>
               <img src={this.state.productSelected.image_link} />
             </p>
