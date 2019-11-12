@@ -8,14 +8,14 @@ export default class ProductList extends Component {
     productType: 'Eyebrow'
   };
 
-  loadDatafromAPI(productType) {
+  loadDatafromAPI = (productType) => {
     fetch(`${Config.api}product_type=${productType}`)
     .then(response => response.json())
     .then(data => this.setState({ productList: data }))
     .catch(err => console.error(err));
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.loadDatafromAPI(this.state.productType);
   }
 
@@ -34,7 +34,7 @@ export default class ProductList extends Component {
     return (
       <div className="product-list">
         <div className="product-list-filter">
-          <label>Product Type</label>
+          <label>Product Type </label> 
           <select onChange={ this.handleProductTypeChange }>
             <option>Eyebrow</option>
             <option>Eyeliner</option>

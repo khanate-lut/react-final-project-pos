@@ -6,6 +6,7 @@ import Calculator from "./Calculator";
 export default class Basket extends Component {
   state = {
     totalPrice: 0,
+    prices: { receivePrice: 0, changeAmount: 0 },
     modal: ""
   };
 
@@ -31,6 +32,10 @@ export default class Basket extends Component {
 
   handleSubmitlick = () => {
     console.log("Basket handleSubmitlick");
+    // save all basket to localStorage
+    localStorage.setItem('basketProducts', JSON.stringify(this.props.productList));
+    localStorage.setItem('prices', JSON.stringify(this.state.prices));
+    localStorage.setItem('totalPrice', this.state.totalPrice);
     this.props.onSubmitClick();
   };
 
@@ -52,6 +57,7 @@ export default class Basket extends Component {
 
   handleReceivePriceChange = (prices) => {
     console.log('Inside Basket: new Prices:', prices)
+    this.setState({ prices: prices });
   }
 
   render() {

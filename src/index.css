@@ -114,3 +114,10 @@ code {
   cursor: pointer;
 }
 
+.slip-title {
+  padding-left: 5px;
+}
+
+.slip-item-total {
+ border: none;
+}
