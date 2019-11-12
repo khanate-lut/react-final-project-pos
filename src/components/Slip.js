@@ -16,15 +16,26 @@ export default class Slip extends Component {
   };
 
   componentDidMount = () => {
-    const productList = JSON.parse(localStorage.getItem("basketProducts"));
+    let productList = JSON.parse(localStorage.getItem("basketProducts"));
     const prices = JSON.parse(localStorage.getItem("prices"));
     const totalPrice = localStorage.getItem("totalPrice");
 
+    if (productList === null) {
+      productList = [];
+    }
+
+    let receivePrice = 0.0;
+    let changeAmount = 0.0;
+    if (prices !== null) {
+      receivePrice = prices.receivePrice;
+      changeAmount = prices.changeAmount;
+    }
+
     this.setState({
       productList: productList,
-      totalPrice: totalPrice,
-      receivePrice: prices.receivePrice,
-      changeAmount: prices.changeAmount
+      totalPrice: isNaN(totalPrice) ? 0.0 : totalPrice,
+      receivePrice: receivePrice,
+      changeAmount: changeAmount
     });
   };
 
