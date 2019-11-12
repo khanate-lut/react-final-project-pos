@@ -11,3 +11,106 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.app-row {
+  margin-right: 0px;
+}
+
+.product-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.product-list-filter {
+  padding: 10px;
+}
+
+.product-list-loading {
+  height: 100vh;
+  margin: 0 auto;
+  margin-top: 30%;
+}
+
+.basket-list {
+  height: 400px;
+  min-height: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.basket-button {
+  margin-top: 20px;
+}
+
+.basket-button-confirm {
+  margin-left: 50px;
+}
+
+.slip-form {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.product-card-price {
+  float: left;
+}
+
+.product-card-add {
+  float: right;
+}
+
+.input-number {
+  text-align: right;
+}
+
+/* modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-show {
+  display: block;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal-content .btn-confirm {
+  margin-left: 20px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  text-align: right;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
