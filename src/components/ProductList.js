@@ -20,7 +20,11 @@ export default class ProductList extends Component {
       fetch(`${Config.api}product_type=${productType}`)
         .then(response => response.json())
         .then(data => this.setState({ productList: data }))
-        .catch(err => console.error(err));
+        .catch(err => {
+          console.error("call api error:", err);
+          const mock = JSON.parse(JSON.stringify(mockData));
+          this.setState({ productList: mock });
+        });
     }
   };
 
@@ -75,7 +79,7 @@ export default class ProductList extends Component {
                     key={index}
                     product={item}
                     onProductItemClick={() => this.handleProductItemClick(item)}
-                    onClick={ () => this.handleSeeDetail(item)}
+                    onClick={() => this.handleSeeDetail(item)}
                   />
                 );
               }
@@ -98,7 +102,9 @@ export default class ProductList extends Component {
               <label>Product brand: {this.state.productSelected.brand} </label>
             </p>
             <p>
-              <label>Product description: {this.state.productSelected.description} </label>
+              <label>
+                Product description: {this.state.productSelected.description}{" "}
+              </label>
             </p>
             <p>
               <label>Product price: {this.state.productSelected.price} </label>
