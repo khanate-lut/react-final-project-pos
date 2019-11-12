@@ -18,18 +18,20 @@ export default class POS extends Component {
 
   handleProductItemClick = item => {
     console.log("POS handleProductItemClick", item);
+    const cloneItem = {...item};
+    console.log('cloneItem', cloneItem);
     const newBasket = [...this.state.basketProductList];
     let checkDup = false;
     newBasket.forEach(product => {
-      if (product.id === item.id) {
+      if (product.id === cloneItem.id) {
         product.qty++;
         product.price = parseFloat(product.price * product.qty);
         checkDup = true;
       }
     });
     if (!checkDup) {
-      item.qty = 1;
-      newBasket.push(item);
+      cloneItem.qty = 1;
+      newBasket.push(cloneItem);
     }
     this.setState({
       basketProductList: newBasket
