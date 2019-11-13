@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Product from "./Product";
 import Config from "./Config";
 import mockData from "./mock-data.json";
+import QRCode from 'react-google-qrcode';
 
 export default class ProductList extends Component {
   state = {
@@ -111,9 +112,19 @@ export default class ProductList extends Component {
               <label><b>Price</b>: {this.state.productSelected.price} </label>
             </p>
             <hr width="200" />
-            <p>
-              <img src={this.state.productSelected.image_link} />
-            </p>
+            <div className="row">
+              <div className="col-md-6">
+                <p>Image</p>
+                <img src={this.state.productSelected.image_link} />
+              </div>
+              <div className="col-md-1"></div>
+              <div className="col-md-3">
+                <p>Scan this for more detail</p>
+                <QRCode data={this.state.productSelected.product_link} size={200} framed />
+              </div>
+              <div className="col-md-1"></div>
+            </div>
+            
             <div>
               <button className="btn btn-link" onClick={this.handleCloseModal}>
                 Close
