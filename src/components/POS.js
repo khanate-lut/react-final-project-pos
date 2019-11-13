@@ -25,7 +25,7 @@ export default class POS extends Component {
     newBasket.forEach(product => {
       if (product.id === cloneItem.id) {
         product.qty++;
-        product.price = parseFloat(product.price * product.qty);
+        product.price = parseFloat(cloneItem.price * product.qty);
         checkDup = true;
       }
     });
