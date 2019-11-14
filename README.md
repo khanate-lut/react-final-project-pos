@@ -4,6 +4,7 @@ This Simple POS by [Create React App](https://github.com/facebook/create-react-a
 - fetch APIs and can filter by product type.
 - click display full description for each product.
 - use [react-google-qrcode](https://github.com/iamgutz/react-google-qrcode) generate qr of link of product.
+- use bootstrap 4 css for make easy layout
 - calculate total product in basket and calculate change amount.
 - display simple slip when submit order.
 
